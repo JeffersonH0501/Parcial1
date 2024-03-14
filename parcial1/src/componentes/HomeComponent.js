@@ -6,6 +6,10 @@ function HomeComponent() {
 
     const [usuarios, setUsuarios] = useState([])
 
+    const [redirectToPerfil, setRedirectToPerfil] = useState(false);
+    const [redirectToDetail, setRedirectToDetail] = useState(false);
+
+
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/JeffersonH0501/Parcial1/main/datos.json')
         .then(response => response.json())
@@ -13,20 +17,36 @@ function HomeComponent() {
         .catch(error => console.error('Error fetching characters:', error));
     }, []);
 
-    const randomNumberInRange = (min, max) => {
-        return Math.floor(Math.random()
-            * (max - min + 1)) + min;
+    const usuario = usuarios[0];
+
+    if (redirectToPerfil) {
+        return <Navigate to="/perfil" />;
+    }
+
+    if (redirectToDetail) {
+        return <Navigate to="/detalle" />;
+    }
+
+    const handleNext = () => {
+        localStorage.setItem('imagen', usuario.imagenes[0]);
+        localStorage.setItem('usuario', usuario.usuario);
+        localStorage.setItem('nombre', usuario.nombre);
+        localStorage.setItem('descripcion', usuario.descripcion);
+        setRedirectToPerfil(true);
     };
 
-    console.log(usuarios);
-    const usuario = usuarios[0];
+    const handleNextDetail = (imagen) => {
+        localStorage.setItem('imagen', imagen);
+        localStorage.setItem('usuario', usuario.usuario);
+        setRedirectToDetail(true);
+    };
 
     return (
         <div className="home">
             {usuario && (
                 <div className='contenidoUno'>
 
-                    <img src={usuario.imagenes[0]} alt={usuario.nombre} />
+                    <img onClick={handleNext} src={usuario.imagenes[0]} alt={usuario.nombre} />
 
                     <div className="infoUsuario">
                         <h1>{usuario.nombre}</h1>
@@ -37,10 +57,9 @@ function HomeComponent() {
                         <p><strong>Seguidos: </strong> {usuario.seguidos}</p>
                     </div>
 
-                    <h1>Imagenes</h1>
-                    <div className="contenidos imagenes">
+                    <div className="contenidosImagenes">
                         {usuario.imagenes.map(imagen => (
-                            <img src={imagen} alt={usuario.nombre} />
+                            <img onClick={() => handleNextDetail(imagen)} src={imagen} alt={usuario.nombre} />
                         ))}
                     </div>
                 </div>
