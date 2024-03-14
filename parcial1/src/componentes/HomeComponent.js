@@ -41,7 +41,8 @@ function HomeComponent() {
                     <h1>Imagenes</h1>
                     <div className="contenidos imagenes">
                         {usuario.imagenes.map(imagen => (
-                            <img src="https://picsum.photos/350" alt={usuario.nombre} />
+                            <img src={imagen} alt={usuario.nombre} />
+
                         ))}
                     </div>
                     
