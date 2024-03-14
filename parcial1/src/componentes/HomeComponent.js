@@ -4,7 +4,6 @@ import { Navigate } from 'react-router-dom';
 
 function HomeComponent() {
 
-
     const [usuarios, setUsuarios] = useState([])
 
     useEffect(() => {
