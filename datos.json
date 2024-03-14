@@ -6,15 +6,18 @@
         "posts": 20,
         "seguidores": 500,
         "seguidos": 300,
-        "imagen1": "https://picsum.photos/350",
-        "imagen2": "https://picsum.photos/350",
-        "imagen3": "https://picsum.photos/350",
-        "imagen4": "https://picsum.photos/350",
-        "imagen5": "https://picsum.photos/350",
-        "imagen6": "https://picsum.photos/350",
-        "imagen7": "https://picsum.photos/350",
-        "imagen8": "https://picsum.photos/350",
-        "imagen9": "https://picsum.photos/350",
-        "imagen10": "https://picsum.photos/350"
+        "imagenes":
+        [
+            "https://picsum.photos/350",
+            "https://picsum.photos/350",
+            "https://picsum.photos/350",
+            "https://picsum.photos/350",
+            "https://picsum.photos/350",
+            "https://picsum.photos/350",
+            "https://picsum.photos/350",
+            "https://picsum.photos/350",
+            "https://picsum.photos/350",
+            "https://picsum.photos/350"
+        ]
     }
 ]
