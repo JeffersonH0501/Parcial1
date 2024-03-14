@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
-//import './email.css';
+import './home.css';
 
 function HomeComponent() {
 
@@ -35,22 +35,18 @@ function HomeComponent() {
                         <p><strong>Posts: </strong> {usuario.posts}</p>
                         <p><strong>Seguidores: </strong> {usuario.seguidores}</p>
                         <p><strong>Seguidos: </strong> {usuario.seguidos}</p>
-
                     </div>
 
                     <h1>Imagenes</h1>
                     <div className="contenidos imagenes">
                         {usuario.imagenes.map(imagen => (
                             <img src={imagen} alt={usuario.nombre} />
-
                         ))}
                     </div>
-                    
                 </div>
             )}
         </div>
     );
-
 }
 
 export default HomeComponent;
