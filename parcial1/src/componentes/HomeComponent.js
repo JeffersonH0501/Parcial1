@@ -26,7 +26,7 @@ function HomeComponent() {
             {usuario && (
                 <div className='contenidoUno'>
 
-                    <img src={usuario.imagen1} alt={usuario.nombre} />
+                    <img src={usuario.imagenes[0]} alt={usuario.nombre} />
 
                     <div className="infoUsuario">
                         <h1>{usuario.nombre}</h1>
@@ -39,6 +39,12 @@ function HomeComponent() {
                     </div>
 
                     <h1>Imagenes</h1>
+                    <div className="contenidos imagenes">
+                        {usuario.imagenes.map(imagen => (
+                            <img src="https://picsum.photos/350" alt={usuario.nombre} />
+                        ))}
+                    </div>
+                    
                 </div>
             )}
         </div>
