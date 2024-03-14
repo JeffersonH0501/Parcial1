@@ -18,6 +18,7 @@ function HomeComponent() {
             * (max - min + 1)) + min;
     };
 
+    console.log(usuarios);
     const usuario = usuarios[0];
 
     return (
@@ -38,20 +39,6 @@ function HomeComponent() {
                     </div>
 
                     <h1>Imagenes</h1>
-                    <div className='contenidoImagenes'>
-
-                        {usuario.
-
-                        }
-                            {carros.map(carro => (
-                            <div className="carro" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={() => goDetail(carro)}>
-                                <img src={carro.image} alt={carro.carModel} />
-                                <p><strong>{carro.carModel}</strong> </p>
-                            </div>
-                        ))}
-
-
-                    </div>
                 </div>
             )}
         </div>
