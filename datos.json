@@ -1,25 +1,27 @@
 [
     {
-        "usuario": "Jeff",
+        "usuario": "jefferson_0501",
         "nombre": "Jefferson Hernandez",
-        "descripcion": 15,
-        "posts": 20,
-        "seguidores": 500,
-        "seguidos": 300,
+        "descripcion": "Un desarrollador de React con habilidades excepcionales en la creación de interfaces de usuario dinámicas y eficientes, apasionado por resolver problemas complejos y mantenerse al día con las últimas tendencias tecnológicas en el mundo del desarrollo web.",
+        "url": "www.uniandes.edu.com",
+        "posts": 12,
+        "seguidores": 498,
+        "seguidos": 176,
+        "imagen_perfil": "https://picsum.photos/300",
         "imagenes":
         [
+            "https://picsum.photos/345",
+            "https://picsum.photos/346",
+            "https://picsum.photos/347",
+            "https://picsum.photos/348",
+            "https://picsum.photos/349",
             "https://picsum.photos/350",
             "https://picsum.photos/351",
             "https://picsum.photos/352",
             "https://picsum.photos/353",
             "https://picsum.photos/354",
             "https://picsum.photos/355",
-            "https://picsum.photos/356",
-            "https://picsum.photos/357",
-            "https://picsum.photos/358",
-            "https://picsum.photos/359",
-            "https://picsum.photos/359",
-            "https://picsum.photos/359"
+            "https://picsum.photos/356"
         ]
     }
 ]
