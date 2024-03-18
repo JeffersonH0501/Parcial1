@@ -1,22 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Navigate } from 'react-router-dom';
+import React from 'react';
 import './detalle.css';
+import { FormattedMessage } from 'react-intl';
 
 function PerfilComponent() {
 
-    const imagen = localStorage.getItem('imagen');
     const usuario = localStorage.getItem('usuario');
-
+    const imagen = localStorage.getItem('imagen');
 
     return (
-
         <div className="detalle">
-
-            <h1>Detalle de Foto de {usuario}</h1>
-
+            <h1><FormattedMessage id="detail.photoDetail"/> {usuario}</h1>
             <img src={imagen} alt={usuario.nombre} />
-
-            <p><strong>Usuario:</strong> {usuario}</p>
 
         </div>
     );

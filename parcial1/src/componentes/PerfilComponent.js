@@ -1,5 +1,6 @@
 import React from 'react';
 import './perfil.css';
+import { FormattedMessage } from 'react-intl';
 
 function PerfilComponent() {
 
@@ -24,40 +25,40 @@ function PerfilComponent() {
 
             { number === 1 ? (
                 <div>
-                    <p><strong>Nombre de usuario:</strong></p>
+                    <p><strong><FormattedMessage id="perfil.username"/>:</strong></p>
                     <div className='label'>
                         <p>{usuario}</p>
                     </div>
-                    <p><strong>Nombre completo:</strong></p>
+                    <p><strong><FormattedMessage id="perfil.name"/>:</strong></p>
                     <div className='label'>
                         <p>{nombre}</p>
                     </div>
-                    <p><strong>Descripción del perfil:</strong></p>
+                    <p><strong><FormattedMessage id="perfil.description"/>:</strong></p>
                     <div className='label'>
                         <p>{descripcion}</p>
                     </div>
-                    <p><strong>URL página principal:</strong></p>
+                    <p><strong><FormattedMessage id="perfil.url"/>:</strong></p>
                     <div className='label'>
                         <p>{url}</p>
                     </div>
                 </div>
             ) : (
                 <div>
-                    <p><strong>Nombre de usuario:</strong></p>
+                    <p><strong><FormattedMessage id="perfil.username"/>:</strong></p>
                     <input type="text" defaultValue={usuario}/>
-                    <p><strong>Nombre completo:</strong></p>
+                    <p><strong><FormattedMessage id="perfil.name"/>:</strong></p>
                     <input type="text" defaultValue={nombre}/>
-                    <p><strong>Descripción del perfil:</strong></p>
+                    <p><strong><FormattedMessage id="perfil.description"/>:</strong></p>
                     <input type="text" defaultValue={descripcion}/>
-                    <p><strong>URL página principal:</strong></p>
+                    <p><strong><FormattedMessage id="perfil.url"/>:</strong></p>
                     <input type="text" defaultValue={url}/>
                 </div>
             )}
 
             { number === 1 ? (
-                <button>No Disponible Para Editar</button>
+                <button><FormattedMessage id="perfil.nodisponibility"/></button>
             ) : (
-                <button>Disponible Para Editar</button>
+                <button><FormattedMessage id="perfil.disponibility"/></button>
             )}
 
         </div>

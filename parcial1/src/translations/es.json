@@ -1,0 +1,13 @@
+{
+    "home.posts": "publicaciones",
+    "home.followers": "seguidores",
+    "home.following": "siguiendo",
+    "perfil.username": "Nombre de usuario",
+    "perfil.name": "Nombre completo",
+    "perfil.description": "Descripcion del perfil",
+    "perfil.url": "URL página principal",
+    "perfil.disponibility": "Disponible Para Editar",
+    "perfil.nodisponibility": "No Disponible Para Editar",
+    "detail.photoDetail": "Detalle de Foto del usuario"
+}
+  

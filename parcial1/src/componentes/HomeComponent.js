@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { FormattedMessage } from 'react-intl';
 import { Navigate } from 'react-router-dom';
 import './home.css';
 
@@ -36,13 +37,13 @@ function HomeComponent() {
     };
 
     const vistaDetalle = (imagen) => {
-        localStorage.setItem('imagen', imagen);
         localStorage.setItem('usuario', usuario.usuario);
+        localStorage.setItem('imagen', imagen);
         setRedirectToDetail(true);
     };
 
     return (
-        <div className="home">
+    <div className="home">
         {usuario && (
             <div className="contenidoInformacion">
                 <img onClick={vistaPerfil} src={usuario.imagen_perfil} alt={usuario.nombre} className="imagenPerfil" />
@@ -52,13 +53,13 @@ function HomeComponent() {
                     <p><strong><a href={usuario.url}>{usuario.url}</a></strong></p>
                     <div className="infoEstadisticas">
                         <div className="info">
-                            <p><strong>{usuario.posts} </strong>posts</p>
+                            <p><strong>{usuario.posts} </strong><FormattedMessage id="home.posts"/></p>
                         </div>
                         <div className="info">
-                            <p><strong>{usuario.seguidores} </strong>followers</p>
+                            <p><strong>{usuario.seguidores} </strong><FormattedMessage id="home.followers"/></p>
                         </div>
                         <div className="info">
-                            <p><strong>{usuario.seguidos} </strong>following</p>
+                            <p><strong>{usuario.seguidos} </strong><FormattedMessage id="home.following"/></p>
                         </div>
                     </div>
                 </div>
