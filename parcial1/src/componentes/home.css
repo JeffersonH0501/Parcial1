@@ -1,12 +1,97 @@
-.home {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
+* {
+    font-family: "Arial", sans-serif;
 }
 
-.contenidosImagenes img {
-    margin: 50px;
-    max-width: 350px;
-    max-height: 350px;
+.home {
+    padding: 20px;
+}
+
+.contenidoInformacion {
+    display: flex;
+    max-width: 100%;
+    margin: auto auto 30px auto;
+    text-align: left;
+}
+
+.imagenPerfil {
+    border-radius: 50%;
+    margin-right: 20px;
+    max-width: 100%;
+    height: auto;
+}
+
+.informacionUsuario {
+    flex: 1 1 auto;
+}
+
+.infoEstadisticas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info {
+    margin-right: 30px;
+}
+
+
+@media screen and (min-width: 1400px) {
+    .contenidoInformacion {
+        max-width: 50%;
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1399px) {
+    .contenidoInformacion {
+        max-width: 80%; 
+    }
+}
+
+@media screen and (max-width: 799px) {
+    .contenidoInformacion {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 749px) {
+    .contenidoInformacion {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .infoEstadisticas {
+        justify-content: center;
+    }
+}
+
+.contenidoImagenes {
+    display: flex;
+    justify-content: center;
+}
+
+.matriz {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.matriz img {
+    max-width: 100%;
+    height: auto; 
+}
+
+@media screen and (max-width: 800px) {
+    .contenidoInformacion {
+        max-width: 100%;
+    }
+
+    .matriz {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .matriz {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

@@ -6,10 +6,6 @@ function HomeComponent() {
 
     const [usuarios, setUsuarios] = useState([])
 
-    const [redirectToPerfil, setRedirectToPerfil] = useState(false);
-    const [redirectToDetail, setRedirectToDetail] = useState(false);
-
-
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/JeffersonH0501/Parcial1/main/datos.json')
         .then(response => response.json())
@@ -19,6 +15,9 @@ function HomeComponent() {
 
     const usuario = usuarios[0];
 
+    const [redirectToPerfil, setRedirectToPerfil] = useState(false);
+    const [redirectToDetail, setRedirectToDetail] = useState(false);
+
     if (redirectToPerfil) {
         return <Navigate to="/perfil" />;
     }
@@ -27,7 +26,7 @@ function HomeComponent() {
         return <Navigate to="/detalle" />;
     }
 
-    const handleNext = () => {
+    const vistaPerfil = () => {
         localStorage.setItem('imagen', usuario.imagenes[0]);
         localStorage.setItem('usuario', usuario.usuario);
         localStorage.setItem('nombre', usuario.nombre);
@@ -35,7 +34,7 @@ function HomeComponent() {
         setRedirectToPerfil(true);
     };
 
-    const handleNextDetail = (imagen) => {
+    const vistaDetalle = (imagen) => {
         localStorage.setItem('imagen', imagen);
         localStorage.setItem('usuario', usuario.usuario);
         setRedirectToDetail(true);
@@ -43,29 +42,38 @@ function HomeComponent() {
 
     return (
         <div className="home">
-            {usuario && (
-                <div className='contenidoUno'>
-
-                    <img onClick={handleNext} src={usuario.imagenes[0]} alt={usuario.nombre} />
-
-                    <div className="infoUsuario">
-                        <h1>{usuario.nombre}</h1>
-                        <p><strong>Nombre: </strong> {usuario.usuario}</p>
-                        <p><strong>Descripcion: </strong> {usuario.descripcion}</p>
-                        <p><strong>Posts: </strong> {usuario.posts}</p>
-                        <p><strong>Seguidores: </strong> {usuario.seguidores}</p>
-                        <p><strong>Seguidos: </strong> {usuario.seguidos}</p>
-                    </div>
-
-                    <div className="contenidosImagenes">
-                        {usuario.imagenes.map(imagen => (
-                            <img onClick={() => handleNextDetail(imagen)} src={imagen} alt={usuario.nombre} />
-                        ))}
+        {usuario && (
+            <div className="contenidoInformacion">
+                <img onClick={vistaPerfil} src={usuario.imagen_perfil} alt={usuario.nombre} className="imagenPerfil" />
+                <div className="informacionUsuario">
+                    <h1>{usuario.usuario}</h1>
+                    <p><strong>{usuario.nombre} </strong>{usuario.descripcion}</p>
+                    <p><strong><a href={usuario.url}>{usuario.url}</a></strong></p>
+                    <div className="infoEstadisticas">
+                        <div className="info">
+                            <p><strong>{usuario.posts} </strong>posts</p>
+                        </div>
+                        <div className="info">
+                            <p><strong>{usuario.seguidores} </strong>followers</p>
+                        </div>
+                        <div className="info">
+                            <p><strong>{usuario.seguidos} </strong>following</p>
+                        </div>
                     </div>
                 </div>
-            )}
-        </div>
-    );
+            </div>
+        )}
+        {usuario && (
+            <div className="contenidoImagenes">
+                <div className='matriz'>
+                    {usuario.imagenes.map((imagen, index) => (
+                        <img key={index} onClick={() => vistaDetalle(imagen)} src={imagen} alt={usuario.nombre} />
+                    ))}
+                </div>
+            </div>
+        )}
+    </div>
+    );    
 }
 
 export default HomeComponent;
