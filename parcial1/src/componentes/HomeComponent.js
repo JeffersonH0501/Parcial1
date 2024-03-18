@@ -27,10 +27,11 @@ function HomeComponent() {
     }
 
     const vistaPerfil = () => {
-        localStorage.setItem('imagen', usuario.imagenes[0]);
+        localStorage.setItem('imagen', usuario.imagen_perfil);
         localStorage.setItem('usuario', usuario.usuario);
         localStorage.setItem('nombre', usuario.nombre);
         localStorage.setItem('descripcion', usuario.descripcion);
+        localStorage.setItem('url', usuario.url);
         setRedirectToPerfil(true);
     };
 

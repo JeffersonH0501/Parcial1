@@ -1,0 +1,54 @@
+.perfil {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 50px auto 100px auto;
+    max-width: 50%;
+    padding: 30px;
+    border-radius: 2%;
+    border: 1px solid #000;
+}
+
+.perfil img {
+    border-radius: 50%;
+    max-width: 150px;
+    max-height: 150px;
+    margin-bottom: 10px;
+}
+
+.perfil p {
+    text-align: left;
+}
+
+.label {
+    text-align: left;
+    border: 1px solid #000;
+    padding-left: 20px;
+}
+
+.perfil button {
+    background-color: rgb(255, 255, 255);
+    margin-top: 30px;
+    border: 2px solid #ff0000; /* Borde sólido con color */
+    padding: 15px 32px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambio de cursor al pasar por encima */
+    width: 100%;
+}
+
+.perfil input {
+    text-align: left;
+    border: 1px solid #000;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    width: 90%;
+    font-size: 15px;
+}
+
+@media screen and (min-width: 1400px) {
+    .perfil {
+        max-width: 22%;
+    }
+}

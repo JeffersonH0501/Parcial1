@@ -2,6 +2,10 @@
     font-family: "Arial", sans-serif;
 }
 
+body {
+    background-color: aliceblue;
+}
+
 .home {
     padding: 20px;
 }
@@ -18,6 +22,7 @@
     margin-right: 20px;
     max-width: 100%;
     height: auto;
+    cursor: pointer;
 }
 
 .informacionUsuario {
@@ -78,6 +83,7 @@
 .matriz img {
     max-width: 100%;
     height: auto; 
+    cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {
